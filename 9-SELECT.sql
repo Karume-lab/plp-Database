@@ -1,7 +1,10 @@
+-- Create a new database named 'BookDB'
 CREATE DATABASE BookDB;
 
+-- Switch to the 'BookDB' database
 USE BookDB;
 
+-- Create a table named 'Books' in the 'BookDB' database
 CREATE TABLE Books(
     BookID INT PRIMARY KEY,
     Title VARCHAR(50) NOT NULL,
@@ -10,6 +13,7 @@ CREATE TABLE Books(
     PublicationYear YEAR NOT NULL
 );
 
+-- Insert data into the 'Books' table
 INSERT INTO Books (BookID, Title, Author, Genre, PublicationYear)
 VALUES
 (1, 'JoJo''s Bizarre Adventure - Jojolion', 'Hirohiko Araki', 'Action', '2020'),
@@ -23,11 +27,12 @@ VALUES
 (9, 'Demon Slayer: Kimetsu no Yaiba', 'Koyoharu Gotouge', 'Dark Fantasy', '2016'),
 (10, 'One Punch Man', 'ONE', 'Superhero', '2009');
 
-
+-- Select books published in the year 2020
 SELECT * FROM Books
 WHERE PublicationYear = '2020';
 
+-- Select distinct genres from the 'Books' table
 SELECT DISTINCT Genre FROM Books;
 
+-- Select unique authors from the 'Books' table and alias the result as 'BookAuthor'
 SELECT Author FROM Books as BookAuthor;
-
